@@ -1,9 +1,8 @@
 package dev.omargt.alura.converter.unit;
 
-import dev.omargt.alura.converter.unit.Length;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LengthTest {
 
