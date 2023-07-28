@@ -65,7 +65,7 @@ public abstract class ExchangerCurrency {
 
     }
 
-    public static CompletableFuture<List<Currency>> getCurrencies()
+    public static CompletableFuture<List<CurrencyWrapper>> getCurrencies()
             throws CurrencyServiceException {
         String currenciesUrl = API_ROUTE_BASE + "/symbols";
         try {
@@ -76,16 +76,16 @@ public abstract class ExchangerCurrency {
                             boolean success = rootNode.get("success").asBoolean();
 
                             if (!success)
-                                return Collections.<Currency>emptyList();
+                                return Collections.<CurrencyWrapper>emptyList();
 
-                            List<Currency> currencies = new ArrayList<>();
+                            List<CurrencyWrapper> currencies = new ArrayList<>();
 
                             Iterator<Map.Entry<String, JsonNode>> symbols = rootNode.get("symbols").fields();
                             while (symbols.hasNext()) {
                                 var symbol = symbols.next();
                                 try {
                                     Currency currency = Currency.getInstance(symbol.getKey());
-                                    currencies.add(currency);
+                                    currencies.add(new CurrencyWrapper(currency));
                                 } catch (IllegalArgumentException e) {
                                     // When the currency provided is not supported by Java Currency
                                     System.out.println("Currency not supported: " + symbol.getKey());
@@ -98,7 +98,7 @@ public abstract class ExchangerCurrency {
                             return currencies;
                         } catch (JsonProcessingException e) {
                             e.printStackTrace();
-                            return Collections.<Currency>emptyList();
+                            return Collections.<CurrencyWrapper>emptyList();
                         }
                     });
 

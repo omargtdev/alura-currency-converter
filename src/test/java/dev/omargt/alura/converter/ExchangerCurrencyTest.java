@@ -21,7 +21,7 @@ class ExchangerCurrencyTest {
     @Test
     void getCurrencies() {
         try {
-            List<Currency> currencies = ExchangerCurrency.getCurrencies().join();
+            List<CurrencyWrapper> currencies = ExchangerCurrency.getCurrencies().join();
             int lastCount = 166;
             assertEquals(lastCount, currencies.size());
         } catch (CurrencyServiceException e) {

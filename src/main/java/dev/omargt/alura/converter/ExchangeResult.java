@@ -16,7 +16,7 @@ public class ExchangeResult {
         this.date = date;
     }
 
-    public double getToUnitAmount() {
+    public double getUnitRateTo() {
         return unitRateTo;
     }
 
