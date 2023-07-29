@@ -74,4 +74,8 @@ public enum TemperatureScale implements UnitConvertible<TemperatureScale> {
         }
     }
 
+    @Override
+    public String toString() {
+        return name + " (" + symbol + ")";
+    }
 }

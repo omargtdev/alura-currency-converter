@@ -3,7 +3,7 @@ package dev.omargt.alura.converter.unit;
 public enum Length implements UnitConvertible<Length> {
     METER("Meter", "m", 1),
     KILOMETER("Kilometer", "km", 1000),
-    CENTIMETER("Meter", "cm", 0.01),
+    CENTIMETER("Centimeter", "cm", 0.01),
     MILLIMETER("Millimeter", "mm", 0.001),
     INCH("Inch", "in", 0.0254),
     FOOT("Foot", "ft", 0.3048),
@@ -32,6 +32,11 @@ public enum Length implements UnitConvertible<Length> {
         double toMetersOfCurrent = value * conversionFactor;
         double fromMetersOfDestiny = toMetersOfCurrent / unitToConvert.conversionFactor;
         return fromMetersOfDestiny;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + symbol + ")";
     }
 
 }
