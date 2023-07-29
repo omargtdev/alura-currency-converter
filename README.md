@@ -11,7 +11,6 @@ real time! In addition, you can convert temperature and length units too.
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
-* [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 
@@ -42,9 +41,11 @@ The defined architecture was the following:
 - Temperature converter
 
 ## Screenshots
-![app currency](./img/app_currency.png.png)
-![app length](./img/app_length.png.png)
-![app temperature](./img/app_temperature.png.png)
+![app currency](./img/app_currency.png)
+
+![app length](./img/app_length.png)
+
+![app temperature](./img/app_temperature.png)
 
 ## Setup
 You can setup of 2 ways:
@@ -63,9 +64,9 @@ You can setup of 2 ways:
 
 #### Steps
 1. Go to root project.
-2. Execute the following: `mvn clean install`
+2. Execute the following: `mvn clean install`.
 3. An folder called `target` it would be generated.
-4. Go to folder
+4. Go to folder.
 5. Execute the jar with dependencies description:
 `java -jar alura-currency-converter-VERSION-jar-with-dependencies.jar`
 
